@@ -1,0 +1,6 @@
+---
+- hosts: self
+  tasks:
+  - name: install scala
+    apt: name=scala
+    sudo: yes
