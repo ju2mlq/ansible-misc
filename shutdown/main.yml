@@ -1,0 +1,13 @@
+---
+- hosts: '{{ hosts }}'
+  tasks:
+    - name: test connection (before shutdown)
+      ping:
+
+    - name: shutdown!
+      command: /sbin/shutdown -h now
+      sudo: yes
+
+    - name: wait for SSH port down
+      local_action: wait_for host={{ inventory_hostname }} port=22 state=stopped
+
