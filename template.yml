@@ -1,0 +1,8 @@
+---
+- hosts: '{{ hosts }}'
+  tasks:
+    - name: test connection
+      ping:
+
+    - name: echo!
+      command: /bin/echo 'hello'
