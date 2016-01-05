@@ -1,0 +1,6 @@
+---
+- hosts: '{{ hosts }}'
+  tasks:
+  - name: install gradle
+    apt: name=gradle state=latest
+    sudo: yes
